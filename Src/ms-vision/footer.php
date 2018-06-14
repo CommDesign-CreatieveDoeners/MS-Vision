@@ -11,9 +11,15 @@ $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
+<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="col-md-12 content-area" id="payoff">
+	<span class="payoff-title">MSVision:</span>&nbsp;<span>Dedicated to Mass Spectrometry</span>
+	</div>
+</div>
+
 <?php get_sidebar( 'footerfull' ); ?>
 
-<div class="wrapper" id="wrapper-footer">
+<div class="wrapper bg-footer " id="wrapper-footer bg-footer">
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 
@@ -25,18 +31,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 
-							<a href="<?php  echo esc_url( __( 'http://wordpress.org/','understrap' ) ); ?>"><?php printf( 
+							<a href="https://www.commdesign.nl" target="_blank"><?php printf(
 							/* translators:*/
-							esc_html__( 'Proudly powered by %s', 'understrap' ),'WordPress' ); ?></a>
-								<span class="sep"> | </span>
-					
-							<?php printf( // WPCS: XSS ok.
-							/* translators:*/
-								esc_html__( 'Theme: %1$s by %2$s.', 'understrap' ), $the_theme->get( 'Name' ),  '<a href="'.esc_url( __('http://understrap.com', 'understrap')).'">understrap.com</a>' ); ?> 
-				
-							(<?php printf( // WPCS: XSS ok.
-							/* translators:*/
-								esc_html__( 'Version: %1$s', 'understrap' ), $the_theme->get( 'Version' ) ); ?>)
+							esc_html__( 'Build by CommDesign' ),'CreatieveDoeners' ); ?></a>
+
+
 					</div><!-- .site-info -->
 
 				</footer><!-- #colophon -->
@@ -56,4 +55,3 @@ $container = get_theme_mod( 'understrap_container_type' );
 </body>
 
 </html>
-

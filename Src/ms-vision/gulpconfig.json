@@ -1,7 +1,7 @@
 {
   "browserSyncOptions" : {
-    "proxy": "localhost/wordpress/",
-    "notify": false
+    "proxy": "http://35.204.204.7/wp-content/themes/ms-vision/",
+    "notify": true
   },
   "browserSyncWatchFiles" : [
     "./css/*.min.css",

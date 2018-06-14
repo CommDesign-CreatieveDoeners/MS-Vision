@@ -5,6 +5,8 @@
  * @package understrap
  */
 
+
+
 /**
  * Initialize theme default settings
  */
@@ -69,3 +71,20 @@ require get_template_directory() . '/inc/woocommerce.php';
  * Load Editor functions.
  */
 require get_template_directory() . '/inc/editor.php';
+
+/**
+ * Load Editor functions.
+ */
+require get_template_directory() . '/inc/editor.php';
+
+
+
+add_action( 'vc_after_init', 'add_tab_button_super_color' ); /* Note: here we are using vc_after_init because WPBMap::GetParam and mutateParame are available only when default content elements are "mapped" into the system */
+function add_tab_button_super_color() {
+  //Get current values stored in the color param in "Call to Action" element
+  $param = WPBMap::getParam( 'vc_tab_button', 'color' );
+  //Append new value to the 'value' array
+  $param['value'][__( 'MSVision', 'msvision' )] = 'btn-super-color';
+  //Finally "mutate" param with new values
+  vc_update_shortcode_param( 'vc_tab_button', $param );
+}

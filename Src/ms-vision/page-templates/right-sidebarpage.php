@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Right Sidebar Layout
+ * Template Name: Right Sidebar Page | MS Vision
  *
  * This template can be used to override the default template and sidebar setup
  *

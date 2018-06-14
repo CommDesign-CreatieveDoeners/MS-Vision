@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Left Sidebar Layout
+ * Template Name: Left Sidebar Page | MS Vision
  *
  * This template can be used to override the default template and sidebar setup
  *

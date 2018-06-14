@@ -30,7 +30,7 @@ if ( ! function_exists( 'understrap_slbd_count_widgets' ) ) {
 				// If two widgets are published
 				$widget_classes .= ' col-md-2';
 			elseif ( $widget_count >= 3 ) :
-				// Three widgets per row if there's three or more widgets 
+				// Three widgets per row if there's three or more widgets
 				$widget_classes .= ' col-md-4';
 			elseif ( 2 == $widget_count ) :
 				// If two widgets are published
@@ -38,7 +38,7 @@ if ( ! function_exists( 'understrap_slbd_count_widgets' ) ) {
 			elseif ( 1 == $widget_count ) :
 				// If just on widget is active
 				$widget_classes .= ' col-md-12';
-			endif; 
+			endif;
 			return $widget_classes;
 		endif;
 	}
@@ -52,6 +52,26 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 	 */
 	function understrap_widgets_init() {
 		register_sidebar( array(
+			'name'          => __( 'Homepage Sidebar', 'understrap' ),
+			'id'            => 'home-sidebar',
+			'description'   => 'Homepage sidebar widget area',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+
+		register_sidebar( array(
+			'name'          => __( 'Shop Sidebar', 'understrap' ),
+			'id'            => 'shop-sidebar',
+			'description'   => 'Shop sidebar widget area',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+
+		register_sidebar( array(
 			'name'          => __( 'Right Sidebar', 'understrap' ),
 			'id'            => 'right-sidebar',
 			'description'   => 'Right sidebar widget area',
@@ -60,6 +80,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		) );
+
 
 		register_sidebar( array(
 			'name'          => __( 'Left Sidebar', 'understrap' ),
@@ -95,9 +116,9 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'name'          => __( 'Top Full', 'understrap' ),
 			'id'            => 'statichero',
 			'description'   => 'Full top widget with dynmic grid',
-		    'before_widget'  => '<div id="%1$s" class="static-hero-widget %2$s '. understrap_slbd_count_widgets( 'statichero' ) .'">', 
-		    'after_widget'   => '</div><!-- .static-hero-widget -->', 
-		    'before_title'   => '<h3 class="widget-title">', 
+		    'before_widget'  => '<div id="%1$s" class="static-hero-widget %2$s '. understrap_slbd_count_widgets( 'statichero' ) .'">',
+		    'after_widget'   => '</div><!-- .static-hero-widget -->',
+		    'before_title'   => '<h3 class="widget-title">',
 		    'after_title'    => '</h3>',
 		) );
 
@@ -105,10 +126,10 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			'name'          => __( 'Bottom Full', 'understrap' ),
 			'id'            => 'footerfull',
 			'description'   => 'Full bottom widget with dynmic grid',
-		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. understrap_slbd_count_widgets( 'footerfull' ) .'">', 
-		    'after_widget'   => '</div><!-- .footer-widget -->', 
-		    'before_title'   => '<h3 class="widget-title">', 
-		    'after_title'    => '</h3>', 
+		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. understrap_slbd_count_widgets( 'footerfull' ) .'">',
+		    'after_widget'   => '</div><!-- .footer-widget -->',
+		    'before_title'   => '<h3 class="widget-title">',
+		    'after_title'    => '</h3>',
 		) );
 
 	}

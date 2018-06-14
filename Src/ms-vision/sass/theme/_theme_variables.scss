@@ -1,6 +1,62 @@
 // Use this file to overwrite the basic Bootstrap variables and add your own variables
-// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder. 
-// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from /sass/bootstrap/_variables.scss, paste it here and edit the value.
+// As example you find one of the most important Bootstrap variable below: $brand-primary.
+// Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
+// Just add your color code here, compile the theme.scss file to change this color everywhere
+
+/*!
+ * MS Vision SCSS
+ */
+
+  // Color definitions
+    $msvision: #103073;
+
+    $primary: #103073;
+    $primary-tint-50: #d2def9;
+    $primary-tint-10: #1f5ce0;
+    $primary-transparent: rgba(16, 48, 115, 0.9);
+
+    $secondary: #0492d4;
+    $secondary-tint-50: #05acfa;
+    $secondary-tint-10: #cdeefe;
 
 
-$primary: #6f31cd; // Thats a sample how you could change a BootStrap variable.
+    $tertiary: #dc0714;
+
+    $white: #fff;
+    $lightgray: #cbced0;
+
+    $light: #f8f9fa;
+    $dark: #343a40;
+
+
+  // Breakpoints definitions
+    $breakpoint-xs: 0;
+    $breakpoint-sm: 576px;
+    $breakpoint-md: 768px;
+    $breakpoint-lg: 992px;
+    $breakpoint-xl: 1200px;
+
+  // Font definitions
+    $font-stack:    'Roboto', sans-serif;
+    $font-family-sans-serif: 'Roboto', sans-serif , 'Arial', sans-serif;
+    $bold: 800;
+    $medium: 600;
+    $regular: 400;
+
+
+  // Border Radius
+    $border-radius-button: 5px;
+    $border-radius-img: 15px;
+
+  // Base Fontsize
+    $body-fs: 0.95rem;
+    $title-fs: 1.5rem;
+    $smal-fs: 0.7rem;
+    $big-fs: 1.25rem;
+    $h1-fs: 2rem;
+    $h2-fs: 1.75rem;
+    $h3-fs: 1.5rem;
+    $h4-fs: 1.25rem;
+    $h5-fs: 1rem;

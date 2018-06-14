@@ -13,7 +13,7 @@ if ( ! function_exists( 'understrap_woocommerce_support' ) ) {
 	 */
 	function understrap_woocommerce_support() {
 		add_theme_support( 'woocommerce' );
-		
+
 		// Add New Woocommerce 3.0.0 Product Gallery support
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-zoom' );
@@ -148,4 +148,77 @@ if ( ! function_exists ( 'understrap_woocommerce_add_to_cart_args' ) ) {
 		$args['class'] = str_replace('button','btn btn-outline-primary', 'button');
 		return $args;
 	}
+}
+
+
+
+/**
+ * Add a custom product data tab
+ */
+add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
+function woo_new_product_tab( $tabs ) {
+
+	// Adds the new tab
+
+	$tabs['specification_tab'] = array(
+		'title' 	=> __( 'Product specifications', 'woocommerce' ),
+		'priority' 	=> 30,
+		'callback' 	=> 'woo_new_product_tab_content_product_specifications'
+	);
+
+	$tabs['system_tab'] = array(
+		'title' 	=> __( 'System features', 'woocommerce' ),
+		'priority' 	=> 40,
+		'callback' 	=> 'woo_new_product_tab_content_system_features'
+	);
+
+	$tabs['detailed_tab'] = array(
+		'title' 	=> __( 'Detailed information', 'woocommerce' ),
+		'priority' 	=> 50,
+		'callback' 	=> 'woo_new_product_tab_content_detailed_information'
+	);
+
+	return $tabs;
+
+}
+
+function woo_new_product_tab_content_product_specifications() {
+
+	// The new tab content
+
+	echo '<h3>Product specifications</h3>';
+	echo get_field('product_specifications');
+
+}
+
+function woo_new_product_tab_content_system_features() {
+
+	// The new tab content
+
+	echo '<h3>System features</h3>';
+	echo get_field('system_features');
+}
+
+function woo_new_product_tab_content_detailed_information() {
+
+	// The new tab content
+
+	echo '<h3>Detailed information</h3>';
+	echo get_field('detailed_information');
+
+}
+
+
+/**
+ * Remove product data tabs
+ */
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+function woo_remove_product_tabs( $tabs ) {
+
+    unset( $tabs['description'] );      	// Remove the description tab
+    unset( $tabs['reviews'] ); 			// Remove the reviews tab
+    unset( $tabs['additional_information'] );  	// Remove the additional information tab
+
+    return $tabs;
 }
